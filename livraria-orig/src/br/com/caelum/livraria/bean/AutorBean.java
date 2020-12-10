@@ -13,7 +13,12 @@ import br.com.caelum.livraria.modelo.Autor;
 public class AutorBean {
 
 	private Autor autor = new Autor();
+	private Integer autorId;
 
+	public void carregarAutorId() {
+		this.autor = new DAO<Autor>(Autor.class).buscaPorId(autorId);
+	}
+	
 	public Autor getAutor() {
 		return autor;
 	}
@@ -45,5 +50,13 @@ public class AutorBean {
 	public void remover(Autor autor) {
 		System.out.println("Removendo livro: " + autor.getNome());
 		new DAO<Autor>(Autor.class).remove(autor);
+	}
+
+	public Integer getAutorId() {
+		return autorId;
+	}
+
+	public void setAutorId(Integer autorId) {
+		this.autorId = autorId;
 	}
 }
