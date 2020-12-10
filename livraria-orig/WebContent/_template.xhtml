@@ -16,6 +16,9 @@
 			<ui:insert name="conteudo"></ui:insert>
 		</div>
 		<div id="rodape">
+		  <br/><br/>
+		  Usuário logado: <h:outputText value="#{sessionScope['usuarioLogado'].email}" /> 
+		  <br/><br/>
 		  copyright 2012
 		  <ui:insert name="rodape">
 		  </ui:insert>
