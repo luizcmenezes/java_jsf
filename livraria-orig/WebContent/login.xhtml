@@ -10,6 +10,9 @@
 			Login
 		</ui:define>
 		<ui:define name="conteudo">
+		
+			<h:messages globalOnly="true"/>
+			
 			<h:form id="login">
 				<fieldset>
 					<legend>Login</legend>
@@ -18,7 +21,8 @@
 									   for="email" />
 						<h:inputText id="email" 
 									 value="#{loginBean.usuario.email}" 
-									 required="true">
+									 required="true"
+									 requiredMessage="Campo obrigatório">
 							<f:passThroughAttribute name="type" value="email"/>		 
 						</h:inputText>
 						<h:messages for="email" id="messageEmail"/>
@@ -26,7 +30,9 @@
 						<h:outputLabel value="Senha:" 
 						               for="senha" />
 						<h:inputSecret id="senha" 
-						             value="#{loginBean.usuario.senha}">
+						               value="#{loginBean.usuario.senha}"
+						               required="true"
+						               requiredMessage="Campo obrigatório">
 						</h:inputSecret>
 						<h:messages for="senha" id="messageSenha"/>
 		
